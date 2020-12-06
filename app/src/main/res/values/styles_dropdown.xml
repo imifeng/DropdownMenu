@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><!--***********************************************************************************************
+  * Copyright VaxCare (c) 2020.                                                                   *
+  ***********************************************************************************************-->
+
+<resources>
+    <declare-styleable name="DropDownLayout">
+        <attr name="innerIcon" format="reference" />
+        <attr name="innerText" format="string" />
+        <attr name="innerTextFont" format="reference" />
+        <attr name="innerTextSelectedFont" format="reference" />
+        <attr name="innerTextSize" format="dimension" />
+        <attr name="innerTextColor" format="color" />
+        <attr name="innerOffsetX" format="dimension" />
+        <attr name="innerOffsetY" format="dimension" />
+        <attr name="innerMenuHintTitle" format="string" />
+        <attr name="innerMenuWidth" format="dimension" />
+        <attr name="innerVisibleOptions" format="integer" />
+        <attr name="innerItemHeight" format="dimension" />
+    </declare-styleable>
+</resources>

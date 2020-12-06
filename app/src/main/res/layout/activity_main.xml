@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView android:id="@+id/text_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试顶部下拉菜单高度自适应："
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.android.dropdownmenu.dropdown.DropDownLayoutView
+        android:id="@+id/drop_down_top"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="30dp"
+        app:innerTextColor="@color/primary_black"
+        app:innerTextSize="16sp"
+        app:innerOffsetX="45dp"
+        app:innerOffsetY="25dp"
+        app:innerMenuWidth="300dp"
+        app:innerItemHeight="74dp"
+        tools:innerText="请选择"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_top" />
+
+
+    <TextView android:id="@+id/text_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试靠近底部下拉菜单高度自定义可见高度："
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.android.dropdownmenu.dropdown.DropDownLayoutView
+        android:id="@+id/drop_down_bottom"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="30dp"
+        app:innerTextColor="@color/primary_black"
+        app:innerTextSize="14sp"
+        app:innerOffsetX="45dp"
+        app:innerOffsetY="25dp"
+        app:innerMenuWidth="300dp"
+        app:innerVisibleOptions="3"
+        app:innerItemHeight="60dp"
+        tools:innerText="请选择"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_bottom" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
