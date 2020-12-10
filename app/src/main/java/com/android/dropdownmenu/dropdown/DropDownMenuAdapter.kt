@@ -36,7 +36,10 @@ class DropDownMenuAdapter<T>(
                 }
 
                 // 因为本 Demo 中传入数组是 MutableList<String> 类型，如果传入的是MutableList<对象>，这里需要根据类型来显示相应的数据
-                title.text = item.toString()
+                // title.text = item.toString()
+
+                // 这里是为了更好的自定义显示，用回调去适配不同 T （对象）
+                onItemDisplay?.invoke(title, position) // 显示下拉菜单选项的文本
 
                 select_item.setOnClickListener {
                     displayText = title.text.toString()

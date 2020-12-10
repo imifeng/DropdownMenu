@@ -2,6 +2,7 @@ package com.android.dropdownmenu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() {
             preText = preText,
             autoSelected = true,
             autoSelectedPosition = preIndex,
+            onSelectionDisplay = { textView: TextView, i: Int ->
+                // TODO 显示下拉菜单选项的文本，放到这里是为了更好的自定义显示
+                textView.text = testList[i]
+            },
             onSelected = {
                 if (it != -1) {
                     // Set selected shot admin observable
@@ -37,6 +42,10 @@ class MainActivity : AppCompatActivity() {
             preText = "请选择》",
             autoSelected = false,
             autoSelectedPosition = preIndex2,
+            onSelectionDisplay = { textView: TextView, i: Int ->
+                // TODO 显示下拉菜单选项的文本，放到这里是为了更好的自定义显示
+                textView.text = testList[i]
+            },
             onSelected = {
                 if (it != -1) {
                     // Set selected shot admin observable

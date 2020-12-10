@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.KeyEvent
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import com.android.dropdownmenu.R
 import kotlinx.android.synthetic.main.drop_down_layout.view.*
@@ -143,6 +144,7 @@ class DropDownLayoutView @JvmOverloads constructor(
      * @param preText               The text to be displayed
      * @param autoSelected          Auto Selected
      * @param autoSelectedPosition  Auto Selected Position
+     * @param onSelectionDisplay    Display each selection
      * @param onSelected            Callback after selection
      * @param width                 The width of the drop-down menu can be set
      * @param options               Swipe to select the visible number to limit the height of the drop-down menu
@@ -152,6 +154,7 @@ class DropDownLayoutView @JvmOverloads constructor(
         preText: String? = null,
         autoSelected: Boolean = false,
         autoSelectedPosition: Int = -1,
+        onSelectionDisplay: ((text : TextView, position: Int) -> Unit)? = null,
         onSelected: ((position: Int) -> Unit)? = null,
         width: Float = 0f,
         options: Int = 0
@@ -164,6 +167,9 @@ class DropDownLayoutView @JvmOverloads constructor(
             }
         }
         dropDownAdapter = DropDownMenuAdapter(list).apply {
+            onItemDisplay = { text: TextView, position: Int ->
+                onSelectionDisplay?.invoke(text, position)
+            }
             onItemSelected = {
                 if (it > -1) {
                     setSelection(it)
